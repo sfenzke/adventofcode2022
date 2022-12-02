@@ -1,13 +1,6 @@
+extern crate adventofcode_utils;
 use std::error::Error;
-use std::fs::{File};
-use std::io::{self, BufRead};
-use std::path::Path;
-
-fn read_lines<T> (filename: T) -> io::Result<io::Lines<io::BufReader<File>>>
-where T: AsRef<Path> {
-    let file = File::open(filename)?;
-    Ok(io::BufReader::new(file).lines())
-}
+use adventofcode_utils::*;
 
 fn read_data(filename: &str) -> Result<Vec<u32>, Box<dyn Error>> {
     let mut elves: Vec<u32> = vec![0];
